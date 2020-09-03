@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="brander_blog_post" resource="default" comment="Create table using declarative schema">
+        <column xsi:type="int" name="post_id" padding="10" identity="true" unsigned="true" nullable="false"
+                comment="Post Id"/>
+        <column xsi:type="varchar" name="thumbnail" nullable="false" length="255" comment="Thumbnail"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
+        <column xsi:type="varchar" name="content" nullable="false" comment="Description"/>
+        <column xsi:type="timestamp" name="created_at" comment="Created at"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="post_id"/>
+        </constraint>
+    </table>
+</schema>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Brander_BlogTest::blog" title="Blog" translate="title" module="Brander_BlogTest"
+             parent="Magento_Backend::content" sortOrder="50" dependsOnModule="Brander_BlogTest"
+             resource="Brander_BlogTest::blog"/>
+        <add id="Brander_BlogTest::blog_editing" title="Posts" translate="title" module="Brander_BlogTest"
+             parent="Brander_BlogTest::blog" sortOrder="10" dependsOnModule="Brander_BlogTest"
+             action="blog/blog/editing"
+             resource="Brander_BlogTest::blog"/>
+    </menu>
+</config>
