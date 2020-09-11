@@ -288,6 +288,7 @@ return [
         'Amazon_Login' => 1,
         'Amazon_Payment' => 1,
         'Brander_BlogTest' => 1,
+        'Brander_CustomAttr' => 1,
         'Dotdigitalgroup_Email' => 1,
         'Dotdigitalgroup_Chat' => 1,
         'Klarna_Core' => 1,

@@ -1,12 +1,12 @@
 <?php
 
-namespace Brander\BlogTest\Controller\Adminhtml\Blog;
+namespace Brander\BlogTest\Controller\Adminhtml\Index;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
 
-class Editing extends Action
+class Index extends Action
 {
     const MENU_ID = 'Brander_BlogTest::blog_editing';
 

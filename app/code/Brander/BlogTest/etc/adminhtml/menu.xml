@@ -8,7 +8,7 @@
              resource="Brander_BlogTest::blog"/>
         <add id="Brander_BlogTest::blog_editing" title="Posts" translate="title" module="Brander_BlogTest"
              parent="Brander_BlogTest::blog" sortOrder="10" dependsOnModule="Brander_BlogTest"
-             action="blog/blog/editing"
+             action="blog"
              resource="Brander_BlogTest::blog"/>
     </menu>
 </config>

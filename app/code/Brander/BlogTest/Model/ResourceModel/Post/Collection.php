@@ -9,6 +9,6 @@ class Collection extends AbstractCollection
 {
     protected function _construct()
     {
-        $this->_init('Brander\Blog\Model\Post', 'Brander\Blog\Model\Post\ResourceModel\Post');
+        $this->_init('Brander\BlogTest\Model\Post', 'Brander\BlogTest\Model\ResourceModel\Post');
     }
 }

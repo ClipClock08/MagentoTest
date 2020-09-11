@@ -11,7 +11,7 @@
         </arguments>
     </type>
     <virtualType name="Brander\BlogTest\Model\ResourceModel\Post\Grid\Collection"
-                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+                    type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
             <argument name="mainTable" xsi:type="string">brander_blog_post</argument>
             <argument name="resourceModel" xsi:type="string">Brander\BlogTest\Model\ResourceModel\Post</argument>

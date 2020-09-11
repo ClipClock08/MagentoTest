@@ -2,32 +2,41 @@
 
 namespace Brander\BlogTest\Model\Blog;
 
-use Brander\BlogTest\Model\ResourceModel\Post\Collection;
+use Brander\BlogTest\Model\ResourceModel\Post\CollectionFactory;
 use Magento\Ui\DataProvider\AbstractDataProvider;
 
 class DataProvider extends AbstractDataProvider
 {
-    public function __construct($name, $primaryFieldName, $requestFieldName, Collection $collectionFactory, array $meta = [], array $data = [])
+
+    protected $collection;
+    protected $_loadedData;
+
+    public function __construct(
+        $name,
+        $primaryFieldName,
+        $requestFieldName,
+        CollectionFactory $collectionBlogFactory,
+        array $meta = [],
+        array $data = []
+    )
     {
-        $this->collection = $collectionFactory;
+        $this->collection = $collectionBlogFactory->create();
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
     }
 
     public function getData()
     {
-        if (isset($this->loadedData)) {
-            return $this->loadedData;
+        if (isset($this->_loadedData)) {
+            return $this->_loadedData;
         }
 
         $items = $this->collection->getItems();
-        $this->loadedData = array();
 
         foreach ($items as $article) {
-            $this->loadedData[$article->getId()]['article'] = $article->getData();
+            $this->_loadedData[$article->getId()] = $article->getData();
         }
 
-
-        return $this->loadedData;
+        return $this->_loadedData;
 
     }
 }

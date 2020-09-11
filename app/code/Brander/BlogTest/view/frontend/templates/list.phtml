@@ -1,0 +1,7 @@
+<?php
+/** @var \Brander\BlogTest\Block\Blog $block */
+$blogCollection = $this->getBlogCollection();
+foreach ($blogCollection as $blog) {
+    print_r($blog->getData());
+    echo "<br>";
+}
