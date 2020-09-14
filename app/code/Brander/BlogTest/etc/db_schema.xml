@@ -4,10 +4,16 @@
     <table name="brander_blog_post" resource="default" comment="Create table using declarative schema">
         <column xsi:type="int" name="post_id" padding="10" identity="true" unsigned="true" nullable="false"
                 comment="Post Id"/>
-        <column xsi:type="varchar" name="thumbnail" nullable="false" length="255" comment="Thumbnail"/>
         <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
+        <column xsi:type="varchar" name="meta_title" nullable="false" length="255" comment="Meta Title"/>
+        <column xsi:type="text" name="meta_keywords" nullable="false" comment="Meta Keywords"/>
+        <column xsi:type="text" name="meta_description" nullable="false" comment="Meta Description"/>
+        <column xsi:type="varchar" name="content_heading" nullable="false" length="255" comment="Content Heading"/>
         <column xsi:type="varchar" name="content" nullable="false" comment="Description"/>
-        <column xsi:type="timestamp" name="created_at" comment="Created at"/>
+        <column xsi:type="timestamp" name="creation_time" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Block Creation Time"/>
+        <column xsi:type="smallint" name="is_active" unsigned="false" nullable="false" identity="false"
+                default="1" comment="Is Block Active"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="post_id"/>
         </constraint>

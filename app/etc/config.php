@@ -287,6 +287,7 @@ return [
         'Amazon_Core' => 1,
         'Amazon_Login' => 1,
         'Amazon_Payment' => 1,
+        'Brander_Blog' => 1,
         'Brander_BlogTest' => 1,
         'Brander_CustomAttr' => 1,
         'Dotdigitalgroup_Email' => 1,

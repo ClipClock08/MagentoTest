@@ -43,7 +43,7 @@ class Save extends \Magento\Backend\App\Action
             } catch (\Exception $d) {
                 $this->messageManager->addError($d->getMessage());
                 $this->_objectManager->get('Magento\Backend\Model\Session')->setFormData($data);
-                return $resultRedirect->setPath('*/*/edit', ['id' => $blog->getId()]);
+                return $resultRedirect->setPath('*/*/edit', ['post_id' => $blog->getId()]);
             }
         }
 

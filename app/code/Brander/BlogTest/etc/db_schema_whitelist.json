@@ -1,0 +1,18 @@
+{
+    "brander_blog_post": {
+        "column": {
+            "post_id": true,
+            "title": true,
+            "meta_title": true,
+            "meta_keywords": true,
+            "meta_description": true,
+            "content_heading": true,
+            "content": true,
+            "creation_time": true,
+            "is_active": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

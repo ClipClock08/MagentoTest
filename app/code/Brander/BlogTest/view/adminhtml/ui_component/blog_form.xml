@@ -33,14 +33,10 @@
         </argument>
     </dataSource>
 
-    <fieldset name="article">
-        <argument name="data" xsi:type="array">
-            <item name="config" xsi:type="array">
-                <item name="label" xsi:type="string" translate="true">Article Fieldset</item>
-            </item>
-        </argument>
-
-        <!-- This field represents form id and is hidden -->
+    <fieldset name="general">
+        <settings>
+            <label/>
+        </settings>
         <field name="post_id">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -51,23 +47,28 @@
                 </item>
             </argument>
         </field>
-        <field name="thumbnail" formElement="imageUploader">
+        <field name="is_active" sortOrder="10" formElement="checkbox">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">article</item>
+                    <item name="default" xsi:type="number">1</item>
+                </item>
+            </argument>
             <settings>
-                <notice translate="true">Article post image.</notice>
-                <label translate="true">Image Uploader</label>
-                <componentType>imageUploader</componentType>
+                <dataType>boolean</dataType>
+                <label translate="true">Enable Article</label>
+                <dataScope>is_active</dataScope>
             </settings>
             <formElements>
-                <imageUploader>
+                <checkbox>
                     <settings>
-                        <required>false</required>
-                        <allowedExtensions>jpg jpeg gif png</allowedExtensions>
-                        <maxFileSize>2097152</maxFileSize>
-                        <uploaderConfig>
-                            <param xsi:type="string" name="url">blog/articles</param>
-                        </uploaderConfig>
+                        <valueMap>
+                            <map name="false" xsi:type="number">0</map>
+                            <map name="true" xsi:type="number">1</map>
+                        </valueMap>
+                        <prefer>toggle</prefer>
                     </settings>
-                </imageUploader>
+                </checkbox>
             </formElements>
         </field>
         <field name="title" formElement="input">
@@ -83,6 +84,21 @@
                 <dataType>text</dataType>
                 <label translate="true">Article Title</label>
                 <dataScope>title</dataScope>
+            </settings>
+        </field>
+        <field name="content_heading" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">article</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Content Title</label>
+                <dataScope>content_heading</dataScope>
             </settings>
         </field>
         <field name="content" formElement="wysiwyg">
@@ -121,5 +137,63 @@
                 <dataScope>created_at</dataScope>
             </settings>
         </field>
+        <field name="meta_title" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">article</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Article Meta Title</label>
+                <dataScope>meta_title</dataScope>
+            </settings>
+        </field>
+        <field name="meta_keywords" formElement="wysiwyg">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">article</item>
+                </item>
+            </argument>
+            <settings>
+                <additionalClasses>
+                    <class name="admin__field-wide">true</class>
+                </additionalClasses>
+                <label/>
+                <dataScope>meta_keywords</dataScope>
+            </settings>
+            <formElements>
+                <wysiwyg>
+                    <settings>
+                        <wysiwyg>true</wysiwyg>
+                    </settings>
+                </wysiwyg>
+            </formElements>
+        </field>
+        <field name="meta_description" formElement="wysiwyg">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">article</item>
+                </item>
+            </argument>
+            <settings>
+                <additionalClasses>
+                    <class name="admin__field-wide">true</class>
+                </additionalClasses>
+                <label/>
+                <dataScope>meta_description</dataScope>
+            </settings>
+            <formElements>
+                <wysiwyg>
+                    <settings>
+                        <wysiwyg>true</wysiwyg>
+                    </settings>
+                </wysiwyg>
+            </formElements>
+        </field>
     </fieldset>
 </form>
+

@@ -3,12 +3,12 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Brander_BlogTest::blog" title="Blog" translate="title" module="Brander_BlogTest"
+        <add id="Brander_BlogTest::blog_test" title="Blog" translate="title" module="Brander_BlogTest"
              parent="Magento_Backend::content" sortOrder="50" dependsOnModule="Brander_BlogTest"
-             resource="Brander_BlogTest::blog"/>
+             resource="Brander_BlogTest::blog_test"/>
         <add id="Brander_BlogTest::blog_editing" title="Posts" translate="title" module="Brander_BlogTest"
-             parent="Brander_BlogTest::blog" sortOrder="10" dependsOnModule="Brander_BlogTest"
-             action="blog"
-             resource="Brander_BlogTest::blog"/>
+             parent="Brander_BlogTest::blog_test" sortOrder="10" dependsOnModule="Brander_BlogTest"
+             action="blog_test"
+             resource="Brander_BlogTest::blog_test"/>
     </menu>
 </config>

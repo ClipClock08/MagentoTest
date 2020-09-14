@@ -3,21 +3,25 @@
 namespace Brander\BlogTest\Controller\Adminhtml\Index;
 
 use Magento\Backend\App\Action;
-use Brander\BlogTest\Model\Post as Blog;
 
 class Add extends Action
 {
+    const ADMIN_RESOURCE = 'Brander_BlogTest::blog';
+
+    protected $resultForwardFactory;
+
+    public function __construct(
+        \Magento\Backend\App\Action\Context $context,
+        \Magento\Backend\Model\View\Result\ForwardFactory $resultForwardFactory
+    ) {
+        $this->resultForwardFactory = $resultForwardFactory;
+        parent::__construct($context);
+    }
+
     public function execute()
     {
-        $this->_view->loadLayout();
-        $this->_view->renderLayout();
-
-        $articleData = $this->getRequest()->getParam('post_id');
-        if (is_array($articleData)) {
-            $article = $this->_objectManager->create(Blog::class);
-            $article->setData($articleData)->save();
-            $resultRedirect = $this->resultRedirectFactory->create();
-            return $resultRedirect->setPath('*/*/index');
-        }
+        /** @var \Magento\Backend\Model\View\Result\Forward $resultForward */
+        $resultForward = $this->resultForwardFactory->create();
+        return $resultForward->forward('edit');
     }
 }

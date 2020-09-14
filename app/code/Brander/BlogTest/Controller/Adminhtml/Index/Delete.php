@@ -10,7 +10,7 @@ class Delete extends Action
 {
     public function execute()
     {
-        $id = $this->getRequest()->getParam('id');
+        $id = $this->getRequest()->getParam('post_id');
 
         if (!($contact = $this->_objectManager->create(Blog::class)->load($id))) {
             $this->messageManager->addError(__('Unable to proceed. Please, try again.'));
