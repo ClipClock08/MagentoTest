@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="test_feedback" translate="label" sortOrder="10">
+            <label>Test</label>
+        </tab>
+        <section id="feedback" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Test Feedback</label>
+            <tab>test_feedback</tab>
+            <resource>Test_Feedback::feedback_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enable" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[This setting will turn on/off test feedback functionality]]></comment>
+                </field>
+                <field id="page_url_key" translate="label comment" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Url Key</label>
+                    <comment><![CDATA[Feedback page url key for router handle]]></comment>
+                </field>
+                <field id="page_title" translate="label comment" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Page Title</label>
+                    <comment><![CDATA[Feedback page title]]></comment>
+                </field>
+                <field id="meta_title" translate="label comment" type="textarea" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Page Meta Title</label>
+                    <comment><![CDATA[Feedback page meta title]]></comment>
+                </field>
+                <field id="meta_description" translate="label comment" type="textarea" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Page Meta Description</label>
+                    <comment><![CDATA[Feedback page meta description]]></comment>
+                </field>
+                <field id="meta_keywords" translate="label comment" type="textarea" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Page Meta Keywords</label>
+                    <comment><![CDATA[Feedback page meta keywords]]></comment>
+                </field>
+            </group>
+            <group id="form" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Form Settings</label>
+                <field id="enable" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[This setting will turn on/off test feedback form]]></comment>
+                </field>
+                <field id="title" translate="label comment" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <comment><![CDATA[Feedback page form title]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

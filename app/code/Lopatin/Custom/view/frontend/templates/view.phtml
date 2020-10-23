@@ -1,0 +1,14 @@
+<?php
+/**
+ * @var Lopatin\Custom\Block\View $block ;
+ */
+$productData = $block->getData();
+$productID = (int)$productData['data']['currentproductid'];
+var_dump($productID);
+$product = $block->getProductById($productID);
+?>
+<div>
+    <div class="data">
+        <?= 'da';//$product->getName();    ?>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div id="ajaxresponse"></div>
+<?php
+$ajaxurl = $block->getAjaxUrl();
+?>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            Lopatin_Custom/js/custom:{
+                "AjaxUrl": "<?= $ajaxurl; ?>",
+                "CurrentProduct" : "<?= $currentProductID; ?>",
+            }
+        }
+    }
+</script>

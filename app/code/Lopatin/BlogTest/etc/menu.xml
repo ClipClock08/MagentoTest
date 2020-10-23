@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Lopatin_BlogTest::blog" title="Blog" translate="title" module="Lopatin_BlogTest" parent="Magento_Backend::content" sortOrder="500" dependsOnModule="Lopatin_BlogTest" resource="Lopatin_BlogTest::blog"/>
+        <add id="Lopatin_BlogTest::blog_articles" title="Manage Articles" translate="title" module="Lopatin_BlogTest" parent="Lopatin_BlogTest::blog" sortOrder="10" dependsOnModule="Lopatin_BlogTest" action="exampleadminnewpage/helloworld" resource="Lopatin_BlogTest::greetings"/>
+    </menu>
+</config>

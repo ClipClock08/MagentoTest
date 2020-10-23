@@ -1,0 +1,24 @@
+<?php
+/** @var \Lopatin\Test01\Block\View $block */
+?>
+<style>
+    .hideme {
+        display: none;
+    }
+</style>
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "Lopatin_Test01/js/simple-ajax/test": {
+                    "AjaxUrl": "<?php echo $block->getAjaxUrl(); ?>",
+                }
+            }
+        }
+</script>
+<div id='test' class="hideme">
+    <select class="my-select">
+        <% _.each(posts, function(text,value) { %>
+        <option value="<%= value %>"><%= text %></option>
+        <% }) %>
+    </select>
+</div>

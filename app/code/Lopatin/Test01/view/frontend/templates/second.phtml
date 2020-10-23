@@ -1,0 +1,79 @@
+<?php $productData = $block->getData("view_model"); ?>
+<h1><?= __('My Second Template'); ?></h1>
+<button type="button" class="action" data-trigger="trigger">
+    <span data-bind="i18n: 'Click Here'"></span>
+</button>
+<div data-bind="mageInit:{
+        'Magento_Ui/js/modal/modal':{
+            'type': 'popup',
+            'title': 'Popup Title',
+            'trigger': '[data-trigger=trigger]',
+            'responsive': true,
+            'buttons':[{
+                text: jQuery.mage.__('Submit'),
+                action: '*/*',
+                class: 'action'
+            }]
+        }
+    }">
+    <div class="content">
+        <div><?= $productData->getTetsString(); ?></div>
+        <div id="accordion" data-mage-init='{
+        "accordion":{
+            "active": [0,1],
+            "collapsible": true,
+            "openedState": "active",
+            "multipleCollapsible": true
+        }}'>
+            <div data-role="collapsible">
+                <div data-role="trigger">
+                    <h4>Title 1</h4>
+                </div>
+            </div>
+            <div data-role="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+
+            <div data-role="collapsible">
+                <div data-role="trigger">
+                    <h4>Title 2</h4>
+                </div>
+            </div>
+            <div data-role="content"> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+
+            <div data-role="collapsible">
+                <div data-role="trigger">
+                    <h4>Title 3</h4>
+                </div>
+            </div>
+            <div data-role="content">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</div>
+        </div>
+    </div>
+</div>
+
+<ul class="my-list">
+    <li>1st Element</li>
+    <li>2nd Element</li>
+    <li>3rd Element</li>
+    <li>4th Element</li>
+    <li>5th Element</li>
+    <li>6th Element</li>
+    <li>7th Element</li>
+    <li>8th Element</li>
+</ul>
+
+<script>
+    require([
+        'jquery',
+        'slick',
+        'test'
+    ], function ($) {
+        $(document).ready(function () {
+            $(".my-list").slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 4,
+                slidesToScroll: 1
+            });
+        });
+    });
+</script>
