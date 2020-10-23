@@ -1,6 +1,0 @@
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
-    <menu>
-        <add id="Brander_Blog::blog" title="Blog" translate="title" module="Brander_Blog" sortOrder="20" dependsOnModule="Brander_Blog" resource="Brander_Blog::blog"/>
-        <add id="Brander_Blog::manage_blog" title="Manage Articles" translate="title" module="Brander_Blog" sortOrder="10" parent="Brander_Blog::blog" action="blog" resource="Brander_Blog::blog"/>
-    </menu>
-</config>
