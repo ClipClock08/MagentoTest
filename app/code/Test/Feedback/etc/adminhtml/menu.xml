@@ -2,8 +2,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
         <add id="Test_Feedback::test" title="Test" module="Test_Feedback" sortOrder="50" resource="Test_Feedback::test"/>
-        <add id="Test_Feedback::feedback_categories" title="Categories" translate="title" module="Test_Feedback" sortOrder="651" parent="Test_Feedback::test" action="test_feedback/category" resource="Test_Feedback::feedback_categories"/>
-        <add id="Test_Feedback::feedback_questions" title="Questions" translate="title" module="Test_Feedback" sortOrder="652" parent="Test_Feedback::test" action="feedback_questions/question" resource="Test_Feedback::feedback_questions"/>
+        <add id="Test_Feedback::feedback_posts" title="Questions" translate="title" module="Test_Feedback" sortOrder="652" parent="Test_Feedback::test" action="test_feedback/feedback" resource="Test_Feedback::feedback_posts"/>
         <add id="Test_Feedback::feedback_settings" title="Settings" translate="title" module="Test_Feedback" sortOrder="653" parent="Test_Feedback::test" action="adminhtml/system_config/edit/section/test_feedback" resource="Test_Feedback::feedback_settings"/>
     </menu>
 </config>

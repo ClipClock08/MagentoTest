@@ -1,0 +1,14 @@
+{
+    "test_feedback_posts": {
+        "column": {
+            "id_feedback": true,
+            "title": true,
+            "email": true,
+            "message": true,
+            "image": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

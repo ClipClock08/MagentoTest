@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Test\Feedback\Block\View" name="test_feedback.view">
+                <block class="Test\Feedback\Block\Form" name="test_feedback.view.form" ifconfig="test_feedback/form/enable"/>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

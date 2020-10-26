@@ -4,8 +4,7 @@
         <resources>
             <resource id="Magento_Backend::admin">
                 <resource id="Test_Feedback::test" title="Feedback" translate="title" sortOrder="100">
-                    <resource id="Test_Feedback::feedback_categories" title="Feedback Categories" translate="title" sortOrder="10" />
-                    <resource id="Test_Feedback::feedback_questions" title="Feedback Questions" translate="title" sortOrder="20" />
+                    <resource id="Test_Feedback::feedback_posts" title="Feedback Questions" translate="title" sortOrder="20" />
                 </resource>
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
