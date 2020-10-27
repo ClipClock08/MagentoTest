@@ -1,7 +1,7 @@
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
     <table name="test_feedback_posts">
-        <column xsi:type="int" name="id_feedback" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
+        <column xsi:type="int" name="id_feedback" padding="10" unsigned="true" identity="true" nullable="false" comment="Entity Id"/>
         <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
         <column xsi:type="varchar" name="email" nullable="false" length="255" comment="Email"/>
         <column xsi:type="varchar" name="message" nullable="false" length="255" comment="Message"/>

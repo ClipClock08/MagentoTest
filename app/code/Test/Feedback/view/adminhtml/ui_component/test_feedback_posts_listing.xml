@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">test_feedback_posts_list.test_feedback_posts_list_data_source</item>
-            <item name="deps" xsi:type="string">test_feedback_posts_list.test_feedback_posts_list_data_source</item>
+            <item name="provider" xsi:type="string">test_feedback_posts_listing.test_feedback_posts_listing_data_source</item>
+            <item name="deps" xsi:type="string">test_feedback_posts_listing.test_feedback_posts_listing_data_source</item>
         </item>
         <item name="spinner" xsi:type="string">test_feedback_posts_columns</item>
         <!--<item name="buttons" xsi:type="array">
@@ -15,10 +16,11 @@
             </item>
         </item>-->
     </argument>
-    <dataSource name="test_feedback_posts_list_data_source">
+    <dataSource name="test_feedback_posts_listing_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
-            <argument name="class" xsi:type="string">Test\Feedback\Ui\DataProvider\Feedback\ListingDataProvider</argument>
-            <argument name="name" xsi:type="string">test_feedback_posts_list_data_source</argument>
+            <argument name="class" xsi:type="string">Test\Feedback\Ui\DataProvider\Feedback\ListingDataProvider
+            </argument>
+            <argument name="name" xsi:type="string">test_feedback_posts_listing_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">id_feedback</argument>
             <argument name="requestFieldName" xsi:type="string">id_feedback</argument>
             <argument name="data" xsi:type="array">
@@ -42,7 +44,9 @@
         <massaction name="listing_massaction">
             <argument name="data" xsi:type="array">
                 <item name="data" xsi:type="array">
-                    <item name="selectProvider" xsi:type="string">test_feedback_posts_list.test_feedback_posts_list.test_feedback_posts_columns.ids</item>
+                    <item name="selectProvider" xsi:type="string">
+                        test_feedback_posts_listing.test_feedback_posts_listing.test_feedback_posts_columns.ids
+                    </item>
                     <item name="displayArea" xsi:type="string">bottom</item>
                     <item name="component" xsi:type="string">Magento_Ui/js/grid/tree-massactions</item>
                     <item name="indexField" xsi:type="string">id_feedback</item>
@@ -56,7 +60,9 @@
                         <item name="url" xsi:type="url" path="test_feedback/feedback/massDelete"/>
                         <item name="confirm" xsi:type="array">
                             <item name="title" xsi:type="string" translate="true">Delete items</item>
-                            <item name="message" xsi:type="string" translate="true">Are you sure you want to delete selected items?</item>
+                            <item name="message" xsi:type="string" translate="true">Are you sure you want to delete
+                                selected items?
+                            </item>
                         </item>
                     </item>
                 </argument>
@@ -100,15 +106,40 @@
                 <label translate="true">Path</label>
             </settings>
         </column>-->
-        <column name="name">
+        <column name="title">
             <settings>
                 <filter>text</filter>
-                <bodyTmpl>ui/grid/cells/text</bodyTmpl>
-                <label translate="true">Name</label>
+                <dataType>text</dataType>
+                <label translate="true">Title</label>
             </settings>
         </column>
 
-        <actionsColumn name="actions" class="Test\Feedback\Ui\Component\Feedback\Listing\Column\Actions" sortOrder="200">
+        <column name="email">
+            <settings>
+                <filter>email</filter>
+                <dataType>email</dataType>
+                <label translate="true">Email</label>
+            </settings>
+        </column>
+
+        <column name="message">
+            <settings>
+                <filter>text</filter>
+                <dataType>textarea</dataType>
+                <label translate="true">Message</label>
+            </settings>
+        </column>
+
+        <column name="image" component="Magento_Ui/js/grid/columns/thumbnail" class="Magento\Catalog\Ui\Component\Listing\Columns\Thumbnail">
+            <settings>
+                <hasPreview>1</hasPreview>
+                <label translate="true">Thumbnail</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+
+        <actionsColumn name="actions" class="Test\Feedback\Ui\Component\Feedback\Listing\Column\Actions"
+                       sortOrder="200">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="resizeEnabled" xsi:type="boolean">false</item>
